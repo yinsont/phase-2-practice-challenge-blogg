@@ -11,8 +11,8 @@ json-server --watch db.json
 GET / POST / PATCH / DELETE
 
 ```
-http://localhost:3000/blogs/blogs
-http://localhost:3000/blogs/blogs/:id
+http://localhost:3000/blogs
+http://localhost:3000/blogs/:id
 ```
 
 ## Setup the react-app
