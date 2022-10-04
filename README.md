@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+# Practice code challenge The Blogg
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Setup the server
 
-## Available Scripts
+```
+json-server --watch db.json
+```
 
-In the project directory, you can run:
+### Endpoints for the deliverables
 
-### `npm start`
+GET / POST / PATCH / DELETE
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```
+http://localhost:3000/blogs/blogs
+http://localhost:3000/blogs/blogs/:id
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Setup the react-app
 
-### `npm test`
+Run
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+npm install
+npm start
+```
 
-### `npm run build`
+## Deliverables
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- See list of blog posts on the page, using the `BlogPost` component. The
+  `BlogPost` component should display the title, author, and the article.
+- Click on the `Read` button and change the text of the button to `Unread` every time you click. The data does not need to persisted.
+- Click on the `Show form` button and conditionally hide/unhide the form. Use the form to make a post request to the api and render the new blog post at the bottom of the page. The data needs to be persisted in the database.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Optional deliverables
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Using the search box in the `Header` component, user should be able to search through the blog posts searching for the title `or` the author.
+- When the `read` button is clicked make a `PATCH` request to the api `isRead: true` and using the return value change the text of the `Read` button to `Unread / Read`
