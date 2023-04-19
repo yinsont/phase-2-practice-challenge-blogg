@@ -1,6 +1,6 @@
 import React from "react";
 
-function Header() {
+function Header({ search, handleSearch }) {
   return (
     <div>
       <header className="logo">
@@ -8,6 +8,8 @@ function Header() {
 
         {/* This is the search box */}
         <input
+          value={search}
+          onChange={ (e) => handleSearch(e.target.value)}
           style={{
             width: "500px",
             height: "20px",
